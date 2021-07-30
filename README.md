@@ -181,5 +181,5 @@ curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/r
           name: filebeat
           enabled: yes
     ```
-- Run the playbook using `ansible-playbook`, and navigate to your-ELK-public-ip:5601/app/kibana > Add log data > System logs > Check data > System logs dashboard in your web browser to check that the installation worked as expected.
+- Run the playbook using `ansible-playbook` command, and navigate to your-ELK-public-ip:5601/app/kibana > Add log data > System logs > Check data > System logs dashboard in your web browser to check that the installation worked as expected.
 
