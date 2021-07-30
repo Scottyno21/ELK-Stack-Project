@@ -101,7 +101,10 @@ The playbook implements the following tasks:
         state: present
         reload: yes
 ```
-- Download the Docker container called sebp/elk:761
+- Download the Docker container called sebp/elk:761 with the following port mappings:
+  - 5601:5601
+  - 9200:9200
+  - 5044:5044
 ```Download and launch docker elk container
     - name: download and launch a docker elk container
       docker_container:
@@ -109,7 +112,6 @@ The playbook implements the following tasks:
         image: sebp/elk:761
         state: started
         restart_policy: always
-        # Please list the ports that ELK runs on
         published_ports:
           -  5601:5601
           -  9200:9200
