@@ -150,19 +150,19 @@ SSH into the control node and follow the steps below:
 curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat
 ```
 - Copy the filebeat-config.yml file to /etc/ansible/filebeat-config.yml
-- Update the filebeat-config.yml file to include the IP address of your ELK machine on line #1105 and #1805.
-```
-output.elasticsearch:
-#line 1105
-  hosts: ["10.2.0.4:9200"]
-  username: "elastic"
-  password: "changeme"
-```
-```
-setup.kibana:
-#line 1805
-  host: "10.2.0.4:5601"
-```
+  - Update the filebeat-config.yml file to include the IP address of your ELK machine on line #1105 and #1805.
+  ```
+  output.elasticsearch:
+  #line 1105
+    hosts: ["10.2.0.4:9200"]
+    username: "elastic"
+    password: "changeme"
+  ```
+  ```
+  setup.kibana:
+  #line 1805
+    host: "10.2.0.4:5601"
+  ```
 - Create a new playbook that installs Filebeat and then copies the Filebeat configuration file you just made to the correct location
 - Open your playbook and implement the following tasks
   - Download `.deb` file from [artifacts.elastic,co](https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb)
