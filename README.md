@@ -145,7 +145,10 @@ These Beats allow us to collect the following information from each machine:
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 SSH into the control node and follow the steps below:
-- Use ```curl``` to download Filebeat
+- Use ```curl``` to download Filebeat configuration file
+```Curl Filebeat
+curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/raw/eca603b72586fbe148c11f9c87bf96a63cb25760/Filebeat
+```
 - Copy the filebeat-config.yml file to /etc/ansible/filebeat-config.yml
 - Update the filebeat-config.yml file to include...
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
