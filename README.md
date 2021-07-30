@@ -165,27 +165,21 @@ curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/r
   ```
 - Create a new playbook that installs Filebeat and then copies the Filebeat configuration file you just made to the correct location
 - Open your playbook and implement the following tasks
-  - Download `.deb` file from [artifacts.elastic,co](https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb)
-  - Install the `.deb` file using the `dpkg` command below
+  1. Download `.deb` file from [artifacts.elastic,co](https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb)
+  2. Install the `.deb` file using the `dpkg` command below
   ```
   dpkg -i filebeat-7.4.0-amd64.deb
   ```
-  - Run the following commands
+  3. Run the following commands using your playbook
     - `filebeat modules enable system`
     - `filebeat setup`
     - `service filebeat start`
-  - Enable theh filebeat service on boot
+  4. Enable the filebeat service on boot
     ```
       - name: enable service filebeat on boot
         systemd:
           name: filebeat
           enabled: yes
     ```
-- Run the playbook, and navigate to ____ to check that the installation worked as expected.
+- Run the playbook using `ansible-playbook`, and navigate to your-ELK-public-ip:5601/app/kibana > Add log data > System logs > Check data > System logs dashboard in your web browser to check that the installation worked as expected.
 
-_TODO: Answer the following questions to fill in the blanks:_
-- _Which file is the playbook? Where do you copy it?_
-- _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
-
-_As a **Bonus**, provide the specific commands the user will need to run to download the playbook, update the files, etc._
