@@ -153,19 +153,34 @@ curl https://gist.githubusercontent.com/slape/5cc350109583af6cbe577bbcc0710c93/r
 - Update the filebeat-config.yml file to include the IP address of your ELK machine on line #1105 and #1805.
 ```
 output.elasticsearch:
+#line 1105
   hosts: ["10.2.0.4:9200"]
   username: "elastic"
   password: "changeme"
 ```
 ```
 setup.kibana:
+#line 1805
   host: "10.2.0.4:5601"
 ```
-- Download `.deb` file from [artifacts.elastic,co](https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb)
-- Install the `.deb` file using the `dpkg` command below
-```
-dpkg -i filebeat-7.4.0-amd64.deb
-```
+- Create a new playbook that installs Filebeat and then copies the Filebeat configuration file you just made to the correct location
+- Open your playbook and implement the following tasks
+  - Download `.deb` file from [artifacts.elastic,co](https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb)
+  - Install the `.deb` file using the `dpkg` command below
+  ```
+  dpkg -i filebeat-7.4.0-amd64.deb
+  ```
+  - Run the following commands
+    - `filebeat modules enable system`
+    - `filebeat setup`
+    - `service filebeat start`
+  - Enable theh filebeat service on boot
+    ```
+      - name: enable service filebeat on boot
+        systemd:
+          name: filebeat
+          enabled: yes
+    ```
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
