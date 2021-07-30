@@ -68,6 +68,21 @@ The playbook implements the following tasks:
 - Installs the following apt packages:
   - docker.io
   - python3-pip
+  - ```Docker.io and python3-pip code
+    - name: Install docker.io
+      apt:
+        update_cache: yes
+        force_apt_get: yes
+        name: docker.io
+        state: present
+
+      # Use apt module
+    - name: Install python3-pip
+      apt:
+        force_apt_get: yes
+        name: python3-pip
+        state: present
+    ```
 - ...
 - ...
 
