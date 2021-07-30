@@ -45,7 +45,7 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 The machines on the internal network are not exposed to the public Internet. 
 
 Only the ELK machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- Jump Box IP: 10.1.0.4
+- Home Workstation IP
 
 Machines within the network can only be accessed by your home workstation and the Jump Box machine.
 - Jump Box IP: 10.1.0.4
@@ -71,18 +71,20 @@ The playbook implements the following tasks:
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
-![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)![Day 1-launching and exposing the container](https://user-images.githubusercontent.com/81578015/127606063-49831ce1-ad1a-48a7-998e-51b8de91ef47.png)
-
+![TODO: Update the path with the name of your screenshot of docker ps output](Images/docker_ps_output.png)
 
 ### Target Machines & Beats
 This ELK server is configured to monitor the following machines:
-- _TODO: List the IP addresses of the machines you are monitoring_
+- Web-1 10.0.0.5
+- Web-2 10.0.0.6
 
 We have installed the following Beats on these machines:
-- _TODO: Specify which Beats you successfully installed_
+- Web-1 and Web-2
+- Filebeat and Metricbeat have been installed.
 
 These Beats allow us to collect the following information from each machine:
-- _TODO: In 1-2 sentences, explain what kind of data each beat collects, and provide 1 example of what you expect to see. E.g., `Winlogbeat` collects Windows logs, which we use to track user logon events, etc._
+- Filebeat collects system logs which should allows us to see SSH access logs.
+- Metricbeat allows us to collect metrics and system statistics and can allow us to see things such as CPU loads on the Web servers.
 
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
