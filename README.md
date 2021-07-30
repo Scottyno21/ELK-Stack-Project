@@ -162,6 +162,11 @@ output.elasticsearch:
   setup.kibana:
   host: "10.2.0.4:5601"
   ```
+- Download `.deb` file from [artifacts.elastic,co](https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.0-amd64.deb)
+- Install the `.deb` file using the `dpkg` command below
+```
+dpkg -i filebeat-7.4.0-amd64.deb
+```
 - Run the playbook, and navigate to ____ to check that the installation worked as expected.
 
 _TODO: Answer the following questions to fill in the blanks:_
