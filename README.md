@@ -117,6 +117,13 @@ The playbook implements the following tasks:
           -  9200:9200
           -  5044:5044
 ```
+- Enables the docker service on boot in case you restart your ELK VM allowing docker to start automatically
+```
+    - name: Enable service docker on boot
+      systemd:
+        name: docker
+        enabled: yes
+```
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
