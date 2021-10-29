@@ -1,5 +1,5 @@
 # ELK-Stack-Project
-Cybersecurity bootcamp ELK Stack Project for week 13
+Cybersecurity bootcamp ELK Stack Project where we will configure an ELK stack server in order to set up a cloud monitoring system. This project will result in tangible deliverables that should demonstrate knowledge of cloud, network security, logging and monitoring.
 ## Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
